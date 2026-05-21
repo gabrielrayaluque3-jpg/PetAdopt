@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="550.0" prefWidth="750.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.iesfranciscodelosrios.petadopt.controller.AddAdopcionController">
+    <children>
+
+        <VBox spacing="5.0" style="-fx-background-color: #f8f9fa; -fx-border-color: #e9ecef; -fx-border-width: 0 0 1 0;">
+            <children>
+                <Label text="Formalizar Nueva Adopción" textFill="#212529">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Label text="Asocia un adoptante con un animal disponible para completar el proceso." textFill="#6c757d">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+            </children>
+            <padding>
+                <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
+            </padding>
+        </VBox>
+
+        <HBox spacing="25.0" VBox.vgrow="ALWAYS">
+            <children>
+
+                <VBox spacing="10.0" style="-fx-background-color: #fdfdfd; -fx-border-color: #dee2e6; -fx-border-radius: 6; -fx-background-radius: 6;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="1. Selecciona al Adoptante" textFill="#495057">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtFiltroAdoptante" prefHeight="32.0" promptText="🔍 Buscar por nombre..." style="-fx-background-radius: 4; -fx-border-color: #ced4da; -fx-border-radius: 4;" />
+                        <ListView fx:id="lvAdoptantes" style="-fx-background-radius: 4; -fx-border-color: #e9ecef;" VBox.vgrow="ALWAYS" />
+                    </children>
+                    <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                    </padding>
+                </VBox>
+
+                <VBox spacing="10.0" style="-fx-background-color: #fdfdfd; -fx-border-color: #dee2e6; -fx-border-radius: 6; -fx-background-radius: 6;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="2. Selecciona al Animal Libre" textFill="#495057">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtFiltroAnimal" prefHeight="32.0" promptText="🔍 Buscar por nombre o raza..." style="-fx-background-radius: 4; -fx-border-color: #ced4da; -fx-border-radius: 4;" />
+                        <ListView fx:id="lvAnimales" style="-fx-background-radius: 4; -fx-border-color: #e9ecef;" VBox.vgrow="ALWAYS" />
+                    </children>
+                    <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                    </padding>
+                </VBox>
+
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+            </padding>
+        </HBox>
+
+        <HBox alignment="CENTER_RIGHT" spacing="15.0" style="-fx-background-color: #f8f9fa; -fx-border-color: #e9ecef; -fx-border-width: 1 0 0 0;">
+            <children>
+                <Button onAction="#btnCancelar" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #ffffff; -fx-border-color: #ced4da; -fx-border-radius: 4; -fx-background-radius: 4; -fx-cursor: hand;" text="Cancelar" textFill="#495057">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font></Button>
+                <Button onAction="#btnVincular" prefHeight="35.0" prefWidth="160.0" style="-fx-background-color: #2eb85c; -fx-background-radius: 4; -fx-cursor: hand;" text="Confirmar Adopción" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font></Button>
+            </children>
+            <padding>
+                <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
+            </padding>
+        </HBox>
+    </children>
+</VBox>

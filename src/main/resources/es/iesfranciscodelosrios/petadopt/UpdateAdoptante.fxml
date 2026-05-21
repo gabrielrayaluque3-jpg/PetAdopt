@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefWidth="500.0" style="-fx-background-color: #ffffff;" spacing="0.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.iesfranciscodelosrios.petadopt.controller.UpdateAdoptanteController">
+    <children>
+
+        <VBox spacing="5.0" style="-fx-background-color: #f8f9fa; -fx-border-color: #e9ecef; -fx-border-width: 0 0 1 0;">
+            <children>
+                <Label text="Modificar Ficha de Adoptante" textFill="#212529">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label text="Actualiza los datos de contacto o identificación del adoptante seleccionado." textFill="#6c757d">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </Label>
+            </children>
+            <padding>
+                <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
+            </padding>
+        </VBox>
+
+        <GridPane hgap="15.0" vgap="18.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" minWidth="90.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="200.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="35.0" />
+                <RowConstraints minHeight="35.0" />
+                <RowConstraints minHeight="35.0" />
+                <RowConstraints minHeight="35.0" />
+            </rowConstraints>
+            <children>
+                <Label text="DNI:" textFill="#495057" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <font><Font name="System Bold" size="13.0" /></font>
+                </Label>
+                <TextField fx:id="txtDni" prefHeight="32.0" promptText="12345678X" style="-fx-background-radius: 4; -fx-border-color: #ced4da; -fx-border-radius: 4;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label text="Nombre:" textFill="#495057" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <font><Font name="System Bold" size="13.0" /></font>
+                </Label>
+                <TextField fx:id="txtNombre" prefHeight="32.0" promptText="Nombre completo" style="-fx-background-radius: 4; -fx-border-color: #ced4da; -fx-border-radius: 4;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label text="Teléfono:" textFill="#495057" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <font><Font name="System Bold" size="13.0" /></font>
+                </Label>
+                <TextField fx:id="txtTelefono" prefHeight="32.0" promptText="Ej: 600123456" style="-fx-background-radius: 4; -fx-border-color: #ced4da; -fx-border-radius: 4;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label text="Email:" textFill="#495057" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                    <font><Font name="System Bold" size="13.0" /></font>
+                </Label>
+                <TextField fx:id="txtEmail" prefHeight="32.0" promptText="ejemplo@correo.com" style="-fx-background-radius: 4; -fx-border-color: #ced4da; -fx-border-radius: 4;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            </children>
+            <padding>
+                <Insets bottom="25.0" left="25.0" right="30.0" top="25.0" />
+            </padding>
+        </GridPane>
+
+        <HBox alignment="CENTER_RIGHT" spacing="12.0" style="-fx-background-color: #f8f9fa; -fx-border-color: #e9ecef; -fx-border-width: 1 0 0 0;">
+            <children>
+                <Button fx:id="btnCancelar" onAction="#btnCancelar" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #ffffff; -fx-border-color: #ced4da; -fx-border-radius: 4; -fx-background-radius: 4; -fx-cursor: hand;" text="Cancelar" textFill="#495057">
+                    <font><Font name="System Bold" size="13.0" /></font>
+                </Button>
+                <Button fx:id="btnGuardar" onAction="#btnGuardar" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #2196f3; -fx-background-radius: 4; -fx-cursor: hand;" text="Actualizar" textFill="WHITE">
+                    <font><Font name="System Bold" size="13.0" /></font>
+                </Button>
+            </children>
+            <padding>
+                <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
+            </padding>
+        </HBox>
+    </children>
+</VBox>

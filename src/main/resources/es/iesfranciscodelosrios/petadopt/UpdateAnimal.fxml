@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefWidth="500.0" spacing="0.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.iesfranciscodelosrios.petadopt.controller.UpdateAnimalController">
+    <children>
+
+        <VBox spacing="5.0" style="-fx-background-color: #f8f9fa; -fx-border-color: #e9ecef; -fx-border-width: 0 0 1 0;">
+            <children>
+                <Label text="Editar Detalles del Animal" textFill="#212529">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label text="Modifica la información del animal." textFill="#6c757d">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </Label>
+            </children>
+            <padding>
+                <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
+            </padding>
+        </VBox>
+
+        <GridPane hgap="15.0" vgap="18.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" minWidth="90.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="200.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="35.0" />
+                <RowConstraints minHeight="35.0" />
+                <RowConstraints minHeight="35.0" />
+                <RowConstraints minHeight="35.0" />
+                <RowConstraints minHeight="35.0" />
+            </rowConstraints>
+            <children>
+                <Label text="Nombre:" textFill="#495057" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <font><Font name="System Bold" size="13.0" /></font>
+                </Label>
+                <TextField fx:id="txtNombre" prefHeight="32.0" promptText="Nombre del animal" style="-fx-background-radius: 4; -fx-border-color: #ced4da; -fx-border-radius: 4;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label text="Especie:" textFill="#495057" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <font><Font name="System Bold" size="13.0" /></font>
+                </Label>
+                <ComboBox fx:id="cbEspecie" maxWidth="1.7976931348623157E308" prefHeight="32.0" promptText="Selecciona especie..." style="-fx-background-radius: 4; -fx-border-color: #ced4da; -fx-border-radius: 4; -fx-background-color: #ffffff;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label text="Raza:" textFill="#495057" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <font><Font name="System Bold" size="13.0" /></font>
+                </Label>
+                <TextField fx:id="txtRaza" prefHeight="32.0" promptText="Raza del animal" style="-fx-background-radius: 4; -fx-border-color: #ced4da; -fx-border-radius: 4;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label text="Edad:" textFill="#495057" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                    <font><Font name="System Bold" size="13.0" /></font>
+                </Label>
+                <TextField fx:id="txtEdad" prefHeight="32.0" promptText="Edad en años" style="-fx-background-radius: 4; -fx-border-color: #ced4da; -fx-border-radius: 4;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <Label text="Voluntario:" textFill="#495057" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                    <font><Font name="System Bold" size="13.0" /></font>
+                </Label>
+                <ComboBox fx:id="cbVoluntario" maxWidth="1.7976931348623157E308" prefHeight="32.0" promptText="Asignar voluntario encargado..." style="-fx-background-radius: 4; -fx-border-color: #ced4da; -fx-border-radius: 4; -fx-background-color: #ffffff;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            </children>
+            <padding>
+                <Insets bottom="25.0" left="25.0" right="30.0" top="25.0" />
+            </padding>
+        </GridPane>
+
+        <HBox alignment="CENTER_RIGHT" spacing="12.0" style="-fx-background-color: #f8f9fa; -fx-border-color: #e9ecef; -fx-border-width: 1 0 0 0;">
+            <children>
+                <Button onAction="#btnCancelar" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #ffffff; -fx-border-color: #ced4da; -fx-border-radius: 4; -fx-background-radius: 4; -fx-cursor: hand;" text="Cancelar" textFill="#495057">
+                    <font><Font name="System Bold" size="13.0" /></font>
+                </Button>
+                <Button onAction="#btnGuardar" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #2196f3; -fx-background-radius: 4; -fx-cursor: hand;" text="Guardar Cambios" textFill="WHITE">
+                    <font><Font name="System Bold" size="13.0" /></font>
+                </Button>
+            </children>
+            <padding>
+                <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
+            </padding>
+        </HBox>
+    </children>
+</VBox>
