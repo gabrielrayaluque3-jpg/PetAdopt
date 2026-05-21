@@ -55,6 +55,11 @@ public class AddTareaController {
         stage.close();
     }
 
+    @FXML
+    private void cancelar() {
+        cerrarVentana();
+    }
+
     private void mostrarAlerta(String titulo, String contenido, Alert.AlertType tipo) {
         Alert alert = new Alert(tipo);
         alert.setTitle(titulo);

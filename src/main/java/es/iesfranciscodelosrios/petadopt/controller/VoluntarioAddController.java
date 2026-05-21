@@ -92,6 +92,11 @@ public class VoluntarioAddController {
     }
 
     @FXML
+    private void cancelar(){
+        cerrarVentana();
+    }
+
+    @FXML
     private void onSalirClick(ActionEvent event) {
         Utils.cerrar(event);
     }

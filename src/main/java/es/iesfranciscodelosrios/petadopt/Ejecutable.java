@@ -12,8 +12,8 @@ public class Ejecutable extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Ejecutable.class.getResource("MenuPrincipal.fxml"));
 
-        Scene scene = new Scene(fxmlLoader.load(), 480, 370);
-        stage.setTitle("Voluntarios");
+        Scene scene = new Scene(fxmlLoader.load(), 600, 500);
+        stage.setTitle("Panel de Control");
         stage.setScene(scene);
         stage.show();
     }
