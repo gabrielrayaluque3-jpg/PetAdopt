@@ -15,12 +15,10 @@ import java.util.List;
 public class RealizaDAO {
     private static final String SQL_FIND_ALL = "SELECT * FROM realiza";
     private static final String SQL_FIND_EXACTO = "SELECT * FROM realiza WHERE id_voluntario=? AND id_tarea=? AND fecha=?";
-    private static final String SQL_FIND_BY_VOLUNTARIO = "SELECT * FROM realiza WHERE id_voluntario=?";
     private static final String SQL_INSERT = "INSERT INTO realiza (fecha, completada, id_voluntario, id_tarea) VALUES (?, ?, ?, ?)";
     private static final String SQL_UPDATE = "UPDATE realiza SET completada=? WHERE id_voluntario=? AND id_tarea=? AND fecha=?";
     private static final String SQL_DELETE = "DELETE FROM realiza WHERE id_voluntario=? AND id_tarea=? AND fecha=?";
     private static final String SQL_FIND_BY_ESTADO = "SELECT * FROM realiza WHERE completada=?";
-    private static final String SQL_FIND_BY_FECHA = "SELECT * FROM realiza WHERE fecha=?";
 
     public static List<Realiza> findAllRealizaciones() {
         List<Realiza> realizaciones = new ArrayList<>();

@@ -15,9 +15,6 @@ import java.util.List;
 public class AnimalDAO {
     private static final String SQL_FIND_ALL = "SELECT * FROM animal";
     private static final String SQL_FIND_ID  = "SELECT * FROM animal WHERE id=?";
-    private static final String SQL_FIND_NAME  = "SELECT * FROM animal WHERE nombre=?";
-    private static final String SQL_FIND_BY_CONTAIN_NAME = "SELECT * FROM animal WHERE nombre LIKE ?";
-    private static final String SQL_FIND_BY_ESPECIE = "SELECT * FROM animal WHERE especie=?";
     private static final String SQL_INSERT = "INSERT INTO animal (nombre, especie, raza, edad, id_voluntario, id_adoptante) VALUES (?, ?, ?, ?, ?, ?)";
     private static final String SQL_UPDATE = "UPDATE animal SET nombre=?, especie=?, raza=?, edad=?, id_voluntario=?, id_adoptante=? WHERE id=?";
     private static final String SQL_DELETE = "DELETE FROM animal WHERE id=?";
@@ -70,87 +67,6 @@ public class AnimalDAO {
             throw new RuntimeException(e);
         }
         return animal;
-    }
-
-    /**
-     * Metodo que busca animlaes por una cadena exacta
-     * @param nombreIntroducido cadena exxacta que queremos buscar
-     * @return lista de animales con esa cadena exacta o lista vacia si no hay animales con esa cadena
-     */
-    public static List<Animal> findAnimalByNombre(String nombreIntroducido) {
-        List<Animal> animales = new ArrayList<>();
-        try (PreparedStatement ps = ConnectionBD.getConnection().prepareStatement(SQL_FIND_NAME)) {
-            ps.setString(1, nombreIntroducido);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String nombre = rs.getString("nombre");
-                Especie especie = Especie.valueOf(rs.getString("especie"));
-                String raza = rs.getString("raza");
-                int edad = rs.getInt("edad");
-                Voluntario voluntario = VoluntarioDAO.findVoluntarioById(rs.getInt("id_voluntario"));
-                Adoptante adoptante = AdoptanteDAO.findAdoptanteById(rs.getInt("id_adoptante"));
-                Animal animal = new Animal(id, nombre, especie, raza, edad, voluntario, adoptante);
-                animales.add(animal);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return animales;
-    }
-
-    /**
-     * Metodo que busca los animales que contienen la cadena de texto que le pasamos
-     * @param nombreIntroducido cadena de texto que contendran los animales
-     * @return lista de animales que contiene la cadena de texto pasada o lista vacia si no hay animales con esa cadena
-     */
-    public static List<Animal> findByContainName(String nombreIntroducido) {
-        List<Animal> animales = new ArrayList<>();
-        try (PreparedStatement ps = ConnectionBD.getConnection().prepareStatement(SQL_FIND_BY_CONTAIN_NAME)) {
-            ps.setString(1, "%" + nombreIntroducido + "%");
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String nombre = rs.getString("nombre");
-                Especie especie = Especie.valueOf(rs.getString("especie"));
-                String raza = rs.getString("raza");
-                int edad = rs.getInt("edad");
-                Voluntario voluntario = VoluntarioDAO.findVoluntarioById(rs.getInt("id_voluntario"));
-                Adoptante adoptante = AdoptanteDAO.findAdoptanteById(rs.getInt("id_adoptante"));
-                Animal animal = new Animal(id, nombre, especie, raza, edad, voluntario, adoptante);
-                animales.add(animal);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return animales;
-    }
-
-    /**
-     * Metodo que filtra a los animales por su especie
-     * @param especieIntroducida especie que queremos ver
-     * @return lista de animales con la especia introducida o una lista vacia si no hay animales con esa especie
-     */
-    public static List<Animal> findByEspecie(Especie especieIntroducida){
-        List<Animal> animales = new ArrayList<>();
-        try (PreparedStatement ps = ConnectionBD.getConnection().prepareStatement(SQL_FIND_BY_ESPECIE)){
-            ps.setString(1, especieIntroducida.name());
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String nombre = rs.getString("nombre");
-                Especie especie = Especie.valueOf(rs.getString("especie"));
-                String raza = rs.getString("raza");
-                int edad = rs.getInt("edad");
-                Voluntario voluntario = VoluntarioDAO.findVoluntarioById(rs.getInt("id_voluntario"));
-                Adoptante adoptante = AdoptanteDAO.findAdoptanteById(rs.getInt("id_adoptante"));
-                Animal animal = new Animal(id, nombre, especie, raza, edad, voluntario, adoptante);
-                animales.add(animal);
-            }
-        }catch(SQLException e){
-            throw new RuntimeException(e);
-        }
-        return animales;
     }
 
     /**

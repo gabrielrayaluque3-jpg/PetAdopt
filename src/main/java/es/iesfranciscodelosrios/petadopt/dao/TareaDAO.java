@@ -13,8 +13,6 @@ import java.util.List;
 public class TareaDAO {
     private static final String SQL_FIND_ALL = "SELECT * FROM tarea";
     private static final String SQL_FIND_ID  = "SELECT * FROM tarea WHERE id=?";
-    private static final String SQL_FIND_NAME  = "SELECT * FROM tarea WHERE nombre=?";
-    private static final String SQL_FIND_BY_CONTAIN_NAME = "SELECT * FROM tarea WHERE nombre LIKE ?";
     private static final String SQL_INSERT = "INSERT INTO tarea (nombre, descripcion, prioridad) VALUES (?, ?, ?)";
     private static final String SQL_UPDATE = "UPDATE tarea SET nombre=?, descripcion=?, prioridad=? WHERE id=?";
     private static final String SQL_DELETE = "DELETE FROM tarea WHERE id=?";
